@@ -1,34 +1,36 @@
-'use client'
-import { useEffect, useState } from "react"
-import Link from "next/link"
-import { usePathname } from "next/navigation"
-import Image from "next/image"
+"use client";
+import { useEffect, useState } from "react";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import Image from "next/image";
+import { Menu, X } from "lucide-react"; // ✅ hamburger & close icons
 
 const links = [
   { name: "Home", path: "/" },
   { name: "About", path: "/about" },
   { name: "Services", path: "/services" },
   { name: "Contact", path: "/contact" },
-]
+];
 
 export default function Navbar() {
-  const [hidden, setHidden] = useState(false)
-  const [lastScrollY, setLastScrollY] = useState(0)
-  const pathname = usePathname()
+  const [hidden, setHidden] = useState(false);
+  const [lastScrollY, setLastScrollY] = useState(0);
+  const [menuOpen, setMenuOpen] = useState(false);
+  const pathname = usePathname();
 
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > lastScrollY) {
-        setHidden(true) // scroll down → hide
+        setHidden(true); // scroll down → hide
       } else {
-        setHidden(false) // scroll up → show
+        setHidden(false); // scroll up → show
       }
-      setLastScrollY(window.scrollY)
-    }
+      setLastScrollY(window.scrollY);
+    };
 
-    window.addEventListener("scroll", handleScroll)
-    return () => window.removeEventListener("scroll", handleScroll)
-  }, [lastScrollY])
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [lastScrollY]);
 
   return (
     <nav
@@ -38,21 +40,23 @@ export default function Navbar() {
     >
       <div className="backdrop-blur-md bg-white/40 shadow-md">
         <div className="container mx-auto flex items-center justify-between px-6 py-4">
-        <Link href='/'>  
-         <Image src='/logo.png' width={60} height={60}/>
-        
-        </Link>
-          <ul className="flex space-x-8">
+          {/* Logo */}
+          <Link href="/">
+            <Image src="/logo.png" width={60} height={60} alt="Logo" />
+          </Link>
+
+          {/* Desktop Menu */}
+          <ul className="hidden md:flex space-x-8">
             {links.map((link) => {
-              const isActive = pathname === link.path
+              const isActive = pathname === link.path;
               return (
                 <li key={link.name} className="relative group">
                   <Link
                     href={link.path}
                     className={`transition-colors duration-300 ${
                       isActive
-                        ? "text-yellow font-bold"
-                        : "text-white font-bold"
+                        ? "text-yellow-400 font-bold"
+                        : "text-black font-bold"
                     }`}
                   >
                     {link.name}
@@ -66,11 +70,45 @@ export default function Navbar() {
                     }`}
                   />
                 </li>
-              )
+              );
             })}
           </ul>
+
+          {/* Mobile Hamburger */}
+          <button
+            className="md:hidden text-white"
+            onClick={() => setMenuOpen(!menuOpen)}
+          >
+            {menuOpen ? <X size={28} /> : <Menu size={28} />}
+          </button>
         </div>
+
+        {/* Mobile Menu Dropdown */}
+        {menuOpen && (
+          <div className="md:hidden bg-white/90 backdrop-blur-md shadow-lg">
+            <ul className="flex flex-col items-center space-y-4 py-6">
+              {links.map((link) => {
+                const isActive = pathname === link.path;
+                return (
+                  <li key={link.name}>
+                    <Link
+                      href={link.path}
+                      className={`block text-lg transition-colors duration-300 ${
+                        isActive
+                          ? "text-yellow-500 font-bold"
+                          : "text-gray-800 font-bold"
+                      }`}
+                      onClick={() => setMenuOpen(false)} // close menu on click
+                    >
+                      {link.name}
+                    </Link>
+                  </li>
+                );
+              })}
+            </ul>
+          </div>
+        )}
       </div>
     </nav>
-  )
+  );
 }

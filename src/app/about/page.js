@@ -16,7 +16,7 @@ export default function AboutUs() {
 
       {/* Hero Section */}
    <section
-      className="relative bg-cover bg-center bg-no-repeat h-[300px] md:h-[400px]"
+      className="relative bg-cover bg-center bg-no-repeat h-[600px] md:h-[600px]"
       style={{ backgroundImage: "url('/medina-hero.jpg')" }} // image must be in /public
     >
       {/* Overlay */}

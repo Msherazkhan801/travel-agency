@@ -133,7 +133,7 @@ export default function HeroSlider() {
       </div>
 
       {/* Trust Indicators */}
-      <div className="absolute bottom-20 left-6 right-6 lg:left-auto lg:right-8 lg:bottom-8">
+      {/* <div className="hidden  lg:absolute lg:bottom-8 lg:right-8 lg:left-auto">
         <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4 text-white max-w-sm ml-auto">
           <div className="flex items-center justify-between text-sm">
             <div className="flex items-center gap-2">
@@ -150,7 +150,7 @@ export default function HeroSlider() {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 }

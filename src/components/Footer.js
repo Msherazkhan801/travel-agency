@@ -1,6 +1,7 @@
 
 import Link from 'next/link';
-import { Facebook, Instagram, MessageCircle, Mail, Phone } from 'lucide-react';
+import { Facebook, Instagram, MessageCircle, Mail, Phone, } from 'lucide-react';
+import { TikTok } from '@/assets/Tiktok';
 
 export default function Footer() {
   return (
@@ -10,7 +11,7 @@ export default function Footer() {
           {/* Logo and Tagline */}
           <div className="mb-6 md:mb-0 text-center md:text-left">
             <h2 className="text-2xl font-bold">Usman Naimat Travel & Tours</h2>
-            <p className="text-gray-400 mt-2">Your trusted partner for Hajj & Umrah since 2008</p>
+            <p className="text-gray-400 mt-2">Your trusted partner for Hajj & Umrah since 2024</p>
             <p className="text-gray-500 text-sm mt-1">Pr No 6030 - SMC PVT LTD</p>
           </div>
           
@@ -43,7 +44,7 @@ export default function Footer() {
           {/* Social Media Icons */}
           <div className="flex space-x-4">
             <a 
-              href="https://facebook.com" 
+              href="https://www.facebook.com/share/1B2YXua72Z/?mibextid=wwXIfr" 
               target="_blank" 
               rel="noopener noreferrer"
               className="bg-gray-800 hover:bg-blue-600 h-10 w-10 rounded-full flex items-center justify-center transition-colors"
@@ -53,13 +54,14 @@ export default function Footer() {
             </a>
             
             <a 
-              href="https://instagram.com" 
+              href="https://www.tiktok.com/@usmannaimattravels?_t=ZS-8zCqjaN5QAi&_r=1" 
               target="_blank" 
               rel="noopener noreferrer"
               className="bg-gray-800 hover:bg-pink-600 h-10 w-10 rounded-full flex items-center justify-center transition-colors"
               aria-label="Instagram"
             >
-              <Instagram size={20} />
+              <TikTok className="w-6 h-6 text-pink-500" />
+
             </a>
             
             <a 
