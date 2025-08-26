@@ -2,6 +2,7 @@
 import { useEffect, useState } from "react"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
+import Image from "next/image"
 
 const links = [
   { name: "Home", path: "/" },
@@ -37,7 +38,10 @@ export default function Navbar() {
     >
       <div className="backdrop-blur-md bg-white/40 shadow-md">
         <div className="container mx-auto flex items-center justify-between px-6 py-4">
-          <h1 className="text-xl font-bold">Logo</h1>
+        <Link href='/'>  
+         <Image src='/logo.png' width={60} height={60}/>
+        
+        </Link>
           <ul className="flex space-x-8">
             {links.map((link) => {
               const isActive = pathname === link.path
@@ -47,8 +51,8 @@ export default function Navbar() {
                     href={link.path}
                     className={`transition-colors duration-300 ${
                       isActive
-                        ? "text-blue-600 font-bold"
-                        : "text-gray-800 font-bold"
+                        ? "text-yellow font-bold"
+                        : "text-white font-bold"
                     }`}
                   >
                     {link.name}

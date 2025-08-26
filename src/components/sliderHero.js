@@ -1,6 +1,7 @@
 'use client'
 import { useState, useEffect } from "react";
 import { ChevronLeft, ChevronRight, Plane, MapPin, Users } from "lucide-react";
+import Link from "next/link";
 
 const slides = [
   {
@@ -81,12 +82,16 @@ export default function HeroSlider() {
                     {slide.description}
                   </p>
                   <div className="flex flex-col sm:flex-row gap-4 animate-fade-in">
+                   <Link href='/contact'>
                     <button className="px-6 py-3 bg-yellow-500 text-black font-semibold rounded-lg shadow hover:bg-yellow-400 transition">
                       {slide.cta}
                     </button>
+                   </Link>
+                   <Link href='/about'>
                     <button className="px-6 py-3 border border-white text-white rounded-lg hover:bg-white hover:text-black transition">
                       Learn More
                     </button>
+                    </Link>
                   </div>
                 </div>
               </div>

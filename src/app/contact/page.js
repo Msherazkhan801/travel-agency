@@ -1,99 +1,125 @@
-'use client'
-
-import Button from "@/components/ui/Button";
+"use client";
+import { useForm, ValidationError } from "@formspree/react";
+import Link from "next/link";
 
 export default function Contact() {
+
+     const [state, handleSubmit] = useForm("manokkpp"); // <-- replace with your Formspree form ID
+
+  if (state.succeeded) {
+    return (
+        <>
+      <h3 className="text-yellow-600 my-24 py-3 text-center font-semibold">
+        ✅ Thanks for contacting us! We’ll get back to you shortly.<br></br>
+      <Link href='/'><button className="border border-black rounded p-5 mt-5">Back to Home</button></Link>
+      </h3>
+        </>
+    );
+  }
   return (
-    <>
-        <h1>Get in touch</h1>
-    <section className="min-h-screen bg-muted/30 py-16 px-6 lg:px-12 flex items-center justify-center my-8">
-      <div className="max-w-6xl w-full grid md:grid-cols-2 gap-10 bg-card rounded-2xl shadow-xl overflow-hidden gap-12">
-        
-        {/* Left: Form */}
-        <div className="p-8 lg:p-12">
-          <h2 className="text-3xl font-bold text-primary mb-4">
-            Contact Us / Book a Package
-          </h2>
-          <p className="text-muted-foreground mb-8">
-            Fill out the form and our team will respond within 24 hours.
+    <section className="py-16 bg-gray-100">
+      <div className="container mx-auto px-4 mt-8">
+        <div className="text-center mb-12">
+          <h2 className="text-3xl font-bold text-gray-800 mb-4">Contact Us</h2>
+          <p className="text-gray-600 max-w-2xl mx-auto">
+            We’d love to hear from you! Whether you have a question about our
+            Hajj & Umrah packages, need assistance, or just want to talk — we’re
+            here to help.
           </p>
-
-          <form className="space-y-5">
-            {/* Name */}
-            <div>
-              <label className="block text-sm font-medium text-foreground mb-1">
-                Full Name
-              </label>
-              <input
-                type="text"
-                placeholder="Your name"
-                className="w-full px-4 py-3 rounded-lg border border-border bg-input text-foreground focus:ring-2 focus:ring-primary outline-none"
-                required
-              />
-            </div>
-
-            {/* Email */}
-            <div>
-              <label className="block text-sm font-medium text-foreground mb-1">
-                Email Address
-              </label>
-              <input
-                type="email"
-                placeholder="Your email"
-                className="w-full px-4 py-3 rounded-lg border border-border bg-input text-foreground focus:ring-2 focus:ring-primary outline-none"
-                required
-              />
-            </div>
-
-            {/* Service */}
-            <div>
-              <label className="block text-sm font-medium text-foreground mb-1">
-                Select Service
-              </label>
-              <select className="w-full px-4 py-3 rounded-lg border border-border bg-input text-foreground focus:ring-2 focus:ring-primary outline-none">
-                <option>Hajj Packages</option>
-                <option>Umrah Services</option>
-                <option>Group Tours</option>
-              </select>
-            </div>
-
-            {/* Message */}
-            <div>
-              <label className="block text-sm font-medium text-foreground mb-1">
-                Message
-              </label>
-              <textarea
-                rows="4"
-                placeholder="Write your message..."
-                className="w-full px-4 py-3 rounded-lg border border-border bg-input text-foreground focus:ring-2 focus:ring-primary outline-none"
-              />
-            </div>
-
-            {/* Submit */}
-            <Button
-              type="submit"
-              className="w-full py-3 bg-yellow-500 text-black font-semibold rounded-lg hover:bg-yellow-400 transition"
-            >
-              Send Message
-            </Button>
-          </form>
         </div>
 
-        {/* Right: Map */}
-        <div className="relative">
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d24184.94327848703!2d39.8175667!3d21.3890826!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x15c204ef7c39b6b7%3A0x3a3b9443d6f02e2!2sMakkah%20Saudi%20Arabia!5e0!3m2!1sen!2s!4v1698242341234!5m2!1sen!2s"
-            width="100%"
-            height="100%"
-            style={{ border: 0 }}
-            allowFullScreen=""
-            loading="lazy"
-            referrerPolicy="no-referrer-when-downgrade"
-            className="h-full min-h-[500px] w-full"
-          ></iframe>
+        {/* Grid Layout: Form + Map */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {/* Contact Form */}
+          <div className="bg-white rounded-lg shadow-md p-6">
+      <h3 className="text-xl font-semibold text-gray-800 mb-4">
+        Get in Touch
+      </h3>
+
+      <form onSubmit={handleSubmit} className="space-y-4">
+        {/* Name */}
+        <div>
+          <label className="block text-gray-600 text-sm mb-2">Name</label>
+          <input
+            id="name"
+            type="text"
+            name="name"
+            placeholder="Your Name"
+            className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-emerald-500 outline-none"
+            required
+          />
+          <ValidationError prefix="Name" field="name" errors={state.errors} />
+        </div>
+
+        {/* Email */}
+        <div>
+          <label className="block text-gray-600 text-sm mb-2">Email</label>
+          <input
+            id="email"
+            type="email"
+            name="email"
+            placeholder="you@example.com"
+            className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-emerald-500 outline-none"
+            required
+          />
+          <ValidationError prefix="Email" field="email" errors={state.errors} />
+        </div>
+
+        {/* Visa Status Dropdown */}
+        <div>
+          <label className="block text-gray-600 text-sm mb-2">Visa Status</label>
+          <select
+            id="visa"
+            name="visa"
+            className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-emerald-500 outline-none"
+            required
+          >
+            <option value="">-- Select Option --</option>
+            <option value="umrah">Umrah</option>
+            <option value="hajj">Hajj</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+
+        {/* Message */}
+        <div>
+          <label className="block text-gray-600 text-sm mb-2">Message</label>
+          <textarea
+            id="message"
+            name="message"
+            rows="5"
+            placeholder="Write your message..."
+            className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-emerald-500 outline-none"
+            required
+          ></textarea>
+          <ValidationError prefix="Message" field="message" errors={state.errors} />
+        </div>
+
+        {/* Submit */}
+        <button
+          type="submit"
+          disabled={state.submitting}
+          className="w-full bg-yellow-500 text-white font-semibold py-2 rounded-lg hover:bg-yellow-400 transition disabled:opacity-50"
+        >
+          {state.submitting ? "Sending..." : "Send Message"}
+        </button>
+      </form>
+    </div>
+
+          {/* Map Section */}
+          <div className="rounded-lg overflow-hidden shadow-md">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.086856450151!2d-122.4194150846814!3d37.77492927975914!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80858064b8c2a6d9%3A0x4f0b8b8b8c8c0a0!2sSan%20Francisco%2C%20CA%2C%20USA!5e0!3m2!1sen!2s!4v1685031123456!5m2!1sen!2s"
+              width="100%"
+              height="100%"
+              style={{ border: 0, minHeight: "400px" }}
+              allowFullScreen=""
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            ></iframe>
+          </div>
         </div>
       </div>
     </section>
-  </>
   );
 }
