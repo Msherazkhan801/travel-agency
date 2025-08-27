@@ -8,15 +8,14 @@ import { usePathname } from "next/navigation";
 
 // License information
 const licenseInfo = {
-  title: "Travel License Information",
-  number: "TL-2023-78945",
-  issued: "January 15, 2023",
-  expiry: "January 14, 2028",
-  issuingAuthority: "Ministry of Tourism, Kingdom of Saudi Arabia",
-  details:
-    "This license certifies that our company is fully authorized to organize and conduct Hajj and Umrah pilgrimages, as well as international group tours. We comply with all regulations set by the Ministry of Tourism and maintain the highest standards of service and safety for our clients.",
-};
-
+    title: "Travel License Information",
+    number: "TL-2023-78945",
+    issued: "January 15, 2023",
+    expiry: "January 14, 2028",
+    issuingAuthority: "Ministry of Tourism, Kingdom of Saudi Arabia",
+    details:
+      "This license certifies that our company is fully authorized to organize and conduct Hajj and Umrah pilgrimages, as well as international group tours. We comply with all regulations set by the Ministry of Tourism and maintain the highest standards of service and safety for our clients.",
+  };
 export default function Services() {
   const [selectedService, setSelectedService] = useState(null);
   const [modalContent, setModalContent] = useState(null); // 'license' or 'reviews'
@@ -184,102 +183,104 @@ export default function Services() {
 
 
       {/* Modal for license and reviews */}
-      {modalContent && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50">
-          <div className="bg-white rounded-xl max-w-2xl w-full max-h-[90vh] overflow-y-auto">
-            <div className="p-6">
-              <div className="flex justify-between items-center mb-6">
-                <h3 className="text-2xl font-bold text-gray-800">
-                  {modalContent === "license"
-                    ? licenseInfo.title
-                    : "Customer Reviews"}
-                </h3>
-                <button
-                  onClick={() => setModalContent(null)}
-                  className="text-gray-500 hover:text-gray-700"
-                >
-                  <svg
-                    className="w-6 h-6"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                      d="M6 18L18 6M6 6l12 12"
-                    ></path>
-                  </svg>
-                </button>
-              </div>
+ {modalContent && (
+  <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50">
+    <div className="bg-white rounded-xl max-w-4xl w-full max-h-[90vh] overflow-y-auto">
+      <div className="p-6">
+        {/* Header */}
+        <div className="flex justify-between items-center mb-6">
+          <h3 className="text-2xl font-bold text-gray-800">
+            {modalContent === "license"
+              ? licenseInfo.title
+              : "Customer Reviews"}
+          </h3>
+          <button
+            onClick={() => setModalContent(null)}
+            className="text-gray-500 hover:text-gray-700"
+          >
+            ✕
+          </button>
+        </div>
 
-              {modalContent === "license" ? (
-                <div className="space-y-4">
-                  <div className="bg-blue-50 p-4 rounded-lg">
-                    <div className="grid grid-cols-2 gap-4">
-                      <div>
-                        <p className="text-sm text-gray-600">License Number</p>
-                        <p className="font-semibold">{licenseInfo.number}</p>
-                      </div>
-                      <div>
-                        <p className="text-sm text-gray-600">
-                          Issuing Authority
-                        </p>
-                        <p className="font-semibold">
-                          {licenseInfo.issuingAuthority}
-                        </p>
-                      </div>
-                      <div>
-                        <p className="text-sm text-gray-600">Issued On</p>
-                        <p className="font-semibold">{licenseInfo.issued}</p>
-                      </div>
-                      <div>
-                        <p className="text-sm text-gray-600">Expires On</p>
-                        <p className="font-semibold">{licenseInfo.expiry}</p>
-                      </div>
-                    </div>
+        {/* License Content with Image */}
+        {modalContent === "license" ? (
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {/* Left side (content) */}
+            <div className="space-y-4">
+              <div className="bg-blue-50 p-4 rounded-lg">
+                <div className="grid grid-cols-2 gap-4">
+                  <div>
+                    <p className="text-sm text-gray-600">License Number</p>
+                    <p className="font-semibold">{licenseInfo.number}</p>
                   </div>
-                  <p className="text-gray-600">{licenseInfo.details}</p>
+                  <div>
+                    <p className="text-sm text-gray-600">Issuing Authority</p>
+                    <p className="font-semibold">
+                      {licenseInfo.issuingAuthority}
+                    </p>
+                  </div>
+                  <div>
+                    <p className="text-sm text-gray-600">Issued On</p>
+                    <p className="font-semibold">{licenseInfo.issued}</p>
+                  </div>
+                  <div>
+                    <p className="text-sm text-gray-600">Expires On</p>
+                    <p className="font-semibold">{licenseInfo.expiry}</p>
+                  </div>
                 </div>
-              ) : (
-                <div className="space-y-6">
-                  {dummyReviews.map((review) => (
-                    <div
-                      key={review.id}
-                      className="border-b border-gray-200 pb-6 last:border-0 last:pb-0"
-                    >
-                      <div className="flex justify-between items-start mb-2">
-                        <h4 className="font-semibold">{review.name}</h4>
-                        <div className="flex items-center">
-                          {[...Array(5)].map((_, i) => (
-                            <svg
-                              key={i}
-                              className={`w-5 h-5 ${
-                                i < review.rating
-                                  ? "text-yellow-400"
-                                  : "text-gray-300"
-                              }`}
-                              fill="currentColor"
-                              viewBox="0 0 20 20"
-                              xmlns="http://www.w3.org/2000/svg"
-                            >
-                              <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                            </svg>
-                          ))}
-                        </div>
-                      </div>
-                      <p className="text-gray-600 mb-2">{review.comment}</p>
-                      <p className="text-sm text-gray-500">{review.date}</p>
-                    </div>
-                  ))}
-                </div>
-              )}
+              </div>
+              <p className="text-gray-600">{licenseInfo.details}</p>
+            </div>
+
+            {/* Right side (image only for license) */}
+            <div className="flex items-center justify-center">
+              <img
+                src="/lice.jpeg" // 👉 replace with actual license image path
+                alt="License Document"
+                className="w-full h-72  rounded-lg shadow-md"
+              />
             </div>
           </div>
-        </div>
-      )}
+        ) : (
+          /* Reviews Content (no image) */
+          <div className="space-y-6">
+            {dummyReviews.map((review) => (
+              <div
+                key={review.id}
+                className="border-b border-gray-200 pb-6 last:border-0 last:pb-0"
+              >
+                <div className="flex justify-between items-start mb-2">
+                  <h4 className="font-semibold">{review.name}</h4>
+                  <div className="flex items-center">
+                    {[...Array(5)].map((_, i) => (
+                      <svg
+                        key={i}
+                        className={`w-5 h-5 ${
+                          i < review.rating
+                            ? "text-yellow-400"
+                            : "text-gray-300"
+                        }`}
+                        fill="currentColor"
+                        viewBox="0 0 20 20"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                      </svg>
+                    ))}
+                  </div>
+                </div>
+                <p className="text-gray-600 mb-2">{review.comment}</p>
+                <p className="text-sm text-gray-500">{review.date}</p>
+              </div>
+            ))}
+          </div>
+        )}
+      </div>
+    </div>
+  </div>
+)}
+
+
 
       
     </div>

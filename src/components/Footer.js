@@ -44,7 +44,7 @@ export default function Footer() {
           {/* Social Media Icons */}
           <div className="flex space-x-4">
             <a 
-              href="https://www.facebook.com/share/1B2YXua72Z/?mibextid=wwXIfr" 
+              href="https://www.facebook.com/share/19UKGH7dG3/?mibextid=wwXIfr" 
               target="_blank" 
               rel="noopener noreferrer"
               className="bg-gray-800 hover:bg-blue-600 h-10 w-10 rounded-full flex items-center justify-center transition-colors"
