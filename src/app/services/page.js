@@ -142,21 +142,20 @@ export default function Services() {
       </div>
 
       {/* Content Split */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-1 gap-6">
         {/* Left Side - Text */}
         <div>
-          <p className="text-gray-600 mb-4">{selectedService.description}</p>
+          <p className="mb-4 text-black font-bold">{selectedService.description}</p>
 
           <ul className="space-y-2 mb-4">
             {selectedService.features.map((feature, index) => (
               <li key={index} className="flex items-center">
-                ✅ <span className="ml-2">{feature}</span>
+                ✅ <span className="ml-2 text-black font-bold">{feature}</span>
               </li>
             ))}
           </ul>
 
           <div className="text-2xl font-bold text-blue-700 mb-6">
-            From {selectedService.price}
           </div>
 
           <Link href="/contact">
@@ -166,16 +165,7 @@ export default function Services() {
           </Link>
         </div>
 
-        {/* Right Side - Image */}
-        <div className="flex items-center justify-center">
-          {(
-            <img
-              src={'/banner.jpeg'}
-              alt={selectedService.title}
-              className="w-full h-64 object-cover rounded-lg shadow-md"
-            />
-          )}
-        </div>
+
       </div>
     </div>
   </div>
@@ -297,7 +287,7 @@ function ServiceCard({ service, onSelect }) {
           <h2 className="text-2xl font-bold text-gray-800">{service.title}</h2>
         </div>
         <div className="w-12 h-1 bg-blue-600 mb-4"></div>
-        <p className="text-gray-600 mb-6">{service.description}</p>
+        <p className="text-black font-bold mb-6">{service.description}</p>
         <ul className="space-y-2 mb-6">
           {service.features.map((feature, index) => (
             <li key={index} className="flex items-center">
@@ -315,12 +305,11 @@ function ServiceCard({ service, onSelect }) {
                   d="M5 13l4 4L19 7"
                 ></path>
               </svg>
-              <span>{feature}</span>
+              <span className="text-black font-bold">{feature}</span>
             </li>
           ))}
         </ul>
         <div className="text-2xl font-bold text-blue-700 mb-6">
-          From {service.price}
         </div>
       </div>
       <div className="flex gap-2 p-4 bg-gray-50 border-t border-gray-100">

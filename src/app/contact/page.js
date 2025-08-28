@@ -132,7 +132,7 @@ export default function Contact() {
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d194104.13653142744!2d71.56547024999999!3d33.97729304999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60138eb8fe647b87%3A0x6c56f39ef75126b5!2sUN%20TRAVEL%20%26%20TOURS%20HAJJ%20%26%20UMRAH%20SERVIES%20PVT%20LTD!5e1!3m2!1sen!2s!4v1756236184051!5m2!1sen!2s"
               width="600"
-              height="450"
+              height="600"
               style={{ border: 0 }}
               allowFullScreen
               loading="lazy"

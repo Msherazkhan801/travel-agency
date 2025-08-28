@@ -3,16 +3,16 @@ export const servicesData = [
     id: 1,
     title: "Hajj Packages",
     description: "Complete Hajj pilgrimage packages with accommodation, transportation, and expert guidance throughout your spiritual journey.",
-    features: ["5-star accommodation", "Expert guides", "Group or private options"],
-    price: "$4,500",
+    features: ["Will Update Soon",],
+   
     icon: '🕋',
   },
   {
     id: 2,
     title: "Umrah Services",
     description: "Year-round Umrah packages designed for comfort and spirituality, with flexible dates and premium amenities.",
-    features: ["Flexible dates", "Premium hotels", "Airport transfers"],
-    price: "$2,200",
+     features: ["SHARING:(255000 PKR)", "QUAD:(260000 PKR)", "TRIPLE:(272000)","DOUBLE:(295000)"],
+   
     icon: '📿'
   },
   {
@@ -20,7 +20,7 @@ export const servicesData = [
     title: "Group Tours",
     description: "Join like-minded travelers on guided group tours with comprehensive itineraries and cultural experiences.",
     features: ["Small groups", "Cultural experiences", "Local cuisine"],
-    price: "$1,800",
+
     icon: '✈️'
   }
 ];

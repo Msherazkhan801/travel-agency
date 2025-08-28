@@ -168,7 +168,7 @@ export default function AboutUs() {
       </section>
 
       {/* Services Section */}
-     <TeamSection/>
+     {/* <TeamSection/> */}
     </div>
   );
 }
