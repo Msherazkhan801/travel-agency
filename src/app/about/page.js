@@ -8,13 +8,7 @@ import Link from "next/link";
 export default function AboutUs() {
   return (
     <div className="min-h-screen bg-gray-50">
-      <Head>
-        <title>About Us - Usman Naimat Travel & Tours</title>
-        <meta
-          name="description"
-          content="Learn about our 15+ years of experience in religious tourism and pilgrimage services"
-        />
-      </Head>
+    
 
       {/* Hero Section */}
       <AboutHero />

@@ -1,4 +1,3 @@
-import TeamSection from "@/components/Teams";
 import HeroSlider from "../components/sliderHero";
 import Contact from "./contact/page";
 import Services from "./services/page";
