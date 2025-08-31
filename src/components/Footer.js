@@ -74,7 +74,7 @@ export default function Footer() {
               className="bg-gray-800 hover:bg-pink-600 h-10 w-10 rounded-full flex items-center justify-center transition-colors"
               aria-label="Instagram"
             >
-              <Instagram className="w-6 h-6 text-pink-500" />
+              <Instagram color='white' className="w-6 h-6 text-pink-500  " />
 
             </a>
             
