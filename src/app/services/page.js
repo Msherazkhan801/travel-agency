@@ -9,10 +9,10 @@ import { usePathname } from "next/navigation";
 // License information
 const licenseInfo = {
     title: "Travel License Information",
-    number: "TL-2023-78945",
-    issued: "January 15, 2023",
-    expiry: "January 14, 2028",
-    issuingAuthority: "Ministry of Tourism, Kingdom of Saudi Arabia",
+    number: "PR - 6030",
+    issued: "January 2, 2025",
+    expiry: "January 1, 2027",
+    issuingAuthority: "Directorate of tourist services by govt kpk",
     details:
       "This license certifies that our company is fully authorized to organize and conduct Hajj and Umrah pilgrimages, as well as international group tours. We comply with all regulations set by the Ministry of Tourism and maintain the highest standards of service and safety for our clients.",
   };
@@ -194,7 +194,7 @@ export default function Services() {
 
         {/* License Content with Image */}
         {modalContent === "license" ? (
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 h-100">
             {/* Left side (content) */}
             <div className="space-y-4">
               <div className="bg-blue-50 p-4 rounded-lg">
@@ -205,7 +205,7 @@ export default function Services() {
                   </div>
                   <div>
                     <p className="text-sm text-gray-600">Issuing Authority</p>
-                    <p className="font-semibold">
+                    <p className="font-semibold capitalize">
                       {licenseInfo.issuingAuthority}
                     </p>
                   </div>
@@ -227,7 +227,7 @@ export default function Services() {
               <img
                 src="/lice.jpeg" // 👉 replace with actual license image path
                 alt="License Document"
-                className="w-full h-72  rounded-lg shadow-md"
+                className="w-full h-90  rounded-lg shadow-md"
               />
             </div>
           </div>
