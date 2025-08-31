@@ -19,7 +19,7 @@ export const servicesData = [
     id: 3,
     title: "Other Countries Tickets",
     description: "Join like-minded travelers on guided group tours with comprehensive itineraries and cultural experiences.",
-    features: ["All Countries Tickets available ", "Tickets are valid and also refundable", "Local cuisine"],
+    features: ["All Countries Tickets available ", "Tickets are valid ", "Local cuisine"],
 
     icon: '✈️'
   }
