@@ -59,7 +59,7 @@ export default function Services() {
           <h2 className="text-2xl font-bold text-gray-800 mb-6 text-center">
             Why Choose Us?
           </h2>
-          <div className="flex md:flex gap-20 items-between">
+          <div className="flex flex-col md:flex-row gap-10 md:gap-20 items-between">
             <div className="flex items-start ">
               <div className="bg-blue-100 p-3 rounded-full mr-4">
                 <svg

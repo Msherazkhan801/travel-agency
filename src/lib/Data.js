@@ -17,9 +17,9 @@ export const servicesData = [
   },
   {
     id: 3,
-    title: "Group Tours",
+    title: "Other Countries Tickets",
     description: "Join like-minded travelers on guided group tours with comprehensive itineraries and cultural experiences.",
-    features: ["Small groups", "Cultural experiences", "Local cuisine"],
+    features: ["All Countries Tickets available ", "Tickets are valid and also refundable", "Local cuisine"],
 
     icon: '✈️'
   }

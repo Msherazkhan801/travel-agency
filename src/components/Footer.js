@@ -2,6 +2,7 @@
 import Link from 'next/link';
 import { Facebook, Instagram, MessageCircle, Mail, Phone, } from 'lucide-react';
 import { TikTok } from '@/assets/Tiktok';
+import Image from 'next/image';
 
 export default function Footer() {
   return (
@@ -10,6 +11,9 @@ export default function Footer() {
         <div className="flex flex-col md:flex-row justify-between items-center">
           {/* Logo and Tagline */}
           <div className="mb-6 md:mb-0 text-center md:text-left">
+            <Link href="/">
+            <Image src="/logo.png" width={60} height={60} alt="Logo" />
+          </Link>
             <h2 className="text-2xl font-bold">Usman Naimat Travel & Tours</h2>
             <p className="text-gray-400 mt-2">Your trusted partner for Hajj & Umrah since 2024</p>
             <p className="text-gray-500 text-sm mt-1">Pr No 6030 - SMC PVT LTD</p>
@@ -61,6 +65,16 @@ export default function Footer() {
               aria-label="Instagram"
             >
               <TikTok className="w-6 h-6 text-pink-500" />
+
+            </a>
+            <a 
+              href="https://www.instagram.com/usmannaimt5?igsh=ZXgwejlsY2h2cHdq&utm_source=qr" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="bg-gray-800 hover:bg-pink-600 h-10 w-10 rounded-full flex items-center justify-center transition-colors"
+              aria-label="Instagram"
+            >
+              <Instagram className="w-6 h-6 text-pink-500" />
 
             </a>
             

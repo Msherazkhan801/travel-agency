@@ -24,7 +24,7 @@ const slides = [
   },
   {
     id: 3,
-    image: '/pattern-hero.jpg',
+    image: '/pattern-heros.jpg',
     title: "Premium Travel Services",
     subtitle: "Your trusted travel partner",
     description:
@@ -88,7 +88,7 @@ export default function HeroSlider() {
                     </button>
                    </Link>
                    <Link href='/about'>
-                    <button className="px-6 py-3 border border-white text-white rounded-lg hover:bg-white hover:text-black transition">
+                    <button className="px-6 py-3 border border-white text-white font-bold rounded-lg hover:bg-white hover:text-black transition">
                       Learn More
                     </button>
                     </Link>
@@ -101,20 +101,22 @@ export default function HeroSlider() {
       ))}
 
       {/* Navigation Arrows */}
-      <button
-        onClick={prevSlide}
-        className="absolute left-6 top-1/2 -translate-y-1/2 p-3 rounded-full bg-white/20 backdrop-blur-sm text-white hover:bg-white/30 transition-all duration-300"
-        aria-label="Previous slide"
-      >
-        <ChevronLeft className="w-6 h-6" />
-      </button>
-      <button
-        onClick={nextSlide}
-        className="absolute right-6 top-1/2 -translate-y-1/2 p-3 rounded-full bg-white/20 backdrop-blur-sm text-white hover:bg-white/30 transition-all duration-300"
-        aria-label="Next slide"
-      >
-        <ChevronRight className="w-6 h-6" />
-      </button>
+     <button
+  onClick={prevSlide}
+  className="hidden md:flex absolute left-6 top-1/2 -translate-y-1/2 p-3 rounded-full bg-white/20 backdrop-blur-sm text-white hover:bg-white/30 transition-all duration-300"
+  aria-label="Previous slide"
+>
+  <ChevronLeft className="w-6 h-6" />
+</button>
+
+<button
+  onClick={nextSlide}
+  className="hidden md:flex absolute right-6 top-1/2 -translate-y-1/2 p-3 rounded-full bg-white/20 backdrop-blur-sm text-white hover:bg-white/30 transition-all duration-300"
+  aria-label="Next slide"
+>
+  <ChevronRight className="w-6 h-6" />
+</button>
+
 
       {/* Dots Indicator */}
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex space-x-3">
@@ -131,26 +133,6 @@ export default function HeroSlider() {
           />
         ))}
       </div>
-
-      {/* Trust Indicators */}
-      {/* <div className="hidden  lg:absolute lg:bottom-8 lg:right-8 lg:left-auto">
-        <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4 text-white max-w-sm ml-auto">
-          <div className="flex items-center justify-between text-sm">
-            <div className="flex items-center gap-2">
-              <Users className="w-4 h-4 text-yellow-400" />
-              <span>1000+ Pilgrims</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <MapPin className="w-4 h-4 text-yellow-400" />
-              <span>Expert Guides</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <Plane className="w-4 h-4 text-yellow-400" />
-              <span>Premium Service</span>
-            </div>
-          </div>
-        </div>
-      </div> */}
     </div>
   );
 }

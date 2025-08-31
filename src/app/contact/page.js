@@ -77,6 +77,25 @@ export default function Contact() {
                   errors={state.errors}
                 />
               </div>
+              {/* Email */}
+              <div>
+                <label className="block text-gray-600 text-sm mb-2">
+                  Contact
+                </label>
+                <input
+                  id="phone"
+                  type="number"
+                  name="phone"
+                  placeholder="03221234567"
+                  className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-emerald-500 outline-none"
+                  required
+                />
+                <ValidationError
+                  prefix="Phone"
+                  field="phone"
+                  errors={state.errors}
+                />
+              </div>
 
               {/* Visa Status Dropdown */}
               <div>

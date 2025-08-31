@@ -79,7 +79,7 @@ export default function Navbar() {
             className="md:hidden text-white"
             onClick={() => setMenuOpen(!menuOpen)}
           >
-            {menuOpen ? <X size={28} /> : <Menu size={28} />}
+            {menuOpen ? <X size={28} color="black" /> : <Menu size={28} color="black"/>}
           </button>
         </div>
 
