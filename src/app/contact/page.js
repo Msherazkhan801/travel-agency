@@ -24,7 +24,7 @@ export default function Contact() {
       <div className="container mx-auto px-4 mt-8">
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold text-gray-800 mb-4">Contact Us</h2>
-          <p className="text-gray-600 max-w-2xl mx-auto">
+          <p className="text-black max-w-2xl mx-auto">
             We’d love to hear from you! Whether you have a question about our
             Hajj & Umrah packages, need assistance, or just want to talk — we’re
             here to help.
@@ -42,13 +42,13 @@ export default function Contact() {
             <form onSubmit={handleSubmit} className="space-y-4">
               {/* Name */}
               <div>
-                <label className="block text-gray-600 text-sm mb-2">Name</label>
+                <label className="block text-black text-sm mb-2">Name</label>
                 <input
                   id="name"
                   type="text"
                   name="name"
                   placeholder="Your Name"
-                  className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-emerald-500 outline-none"
+                  className="w-full border text-bold border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-emerald-500 outline-none"
                   required
                 />
                 <ValidationError
@@ -60,7 +60,7 @@ export default function Contact() {
 
               {/* Email */}
               <div>
-                <label className="block text-gray-600 text-sm mb-2">
+                <label className="block text-black text-sm mb-2">
                   Email
                 </label>
                 <input
@@ -68,7 +68,7 @@ export default function Contact() {
                   type="email"
                   name="email"
                   placeholder="you@example.com"
-                  className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-emerald-500 outline-none"
+                  className="w-full border text-bold border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-emerald-500 outline-none"
                   required
                 />
                 <ValidationError
@@ -79,7 +79,7 @@ export default function Contact() {
               </div>
               {/* Email */}
               <div>
-                <label className="block text-gray-600 text-sm mb-2">
+                <label className="block text-black text-sm mb-2">
                   Contact
                 </label>
                 <input
@@ -99,7 +99,7 @@ export default function Contact() {
 
               {/* Visa Status Dropdown */}
               <div>
-                <label className="block text-gray-600 text-sm mb-2">
+                <label className="block text-black text-sm mb-2">
                   Visa Status
                 </label>
                 <select
@@ -117,7 +117,7 @@ export default function Contact() {
 
               {/* Message */}
               <div>
-                <label className="block text-gray-600 text-sm mb-2">
+                <label className="block text-black text-sm mb-2">
                   Message
                 </label>
                 <textarea

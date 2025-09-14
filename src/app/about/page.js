@@ -21,21 +21,21 @@ export default function AboutUs() {
               <h2 className="text-3xl font-bold text-gray-800 mb-6">
                 Our Story
               </h2>
-              <p className="text-gray-600 mb-6">
+              <p className="text-black mb-6">
                 Founded over 9 years ago, Usman Naimat Travel & Tours has
                 established itself as a trusted name in religious tourism. Our
                 journey began with a simple mission: to provide pilgrims with a
                 spiritually fulfilling and hassle-free experience when visiting
                 the holy cities of Mecca and Medina.
               </p>
-              <p className="text-gray-600 mb-6">
+              <p className="text-black mb-6">
                 What sets us apart is our deep understanding of Islamic
                 traditions and our commitment to excellence in every aspect of
                 the pilgrimage journey. We recognize that these sacred trips are
                 more than just travel—they are profound spiritual experiences
                 that require careful planning, respect, and devotion.
               </p>
-              <p className="text-gray-600 mb-6">
+              <p className="text-black mb-6">
                 Our team consists of experienced professionals who are not only
                 travel experts but also deeply knowledgeable about the religious
                 significance of the pilgrimage. We handle every detail with
@@ -46,7 +46,7 @@ export default function AboutUs() {
               <h3 className="text-2xl font-bold text-gray-800 mt-10 mb-4">
                 Our Mission
               </h3>
-              <p className="text-gray-600 mb-6">
+              <p className="text-black mb-6">
                 To facilitate spiritually rewarding and comfortable pilgrimage
                 experiences by providing comprehensive, respectful, and
                 professionally managed travel services that adhere to Islamic
@@ -56,7 +56,7 @@ export default function AboutUs() {
               <h3 className="text-2xl font-bold text-gray-800 mt-10 mb-4">
                 Our Values
               </h3>
-              <ul className="list-disc pl-5 text-gray-600 mb-6">
+              <ul className="list-disc pl-5 text-black mb-6">
                 <li className="mb-2">
                   Integrity in all our dealings and transactions
                 </li>
@@ -80,24 +80,24 @@ export default function AboutUs() {
                   <div className="text-4xl font-bold text-emerald-700">
                     1000+
                   </div>
-                  <div className="text-gray-600">Happy Pilgrims</div>
+                  <div className="text-black">Happy Pilgrims</div>
                 </div>
 
                 <div className="text-center mb-8">
                   <div className="text-4xl font-bold text-emerald-700">5+</div>
-                  <div className="text-gray-600">Customer Rating</div>
+                  <div className="text-black">Customer Rating</div>
                 </div>
 
                 <div className="text-center mb-8">
                   <div className="text-4xl font-bold text-emerald-700">9+</div>
-                  <div className="text-gray-600">Years Experience</div>
+                  <div className="text-black">Years Experience</div>
                 </div>
 
                 <div className="text-center">
                   <div className="text-4xl font-bold text-emerald-700">
                     100%
                   </div>
-                  <div className="text-gray-600">Satisfaction Rate</div>
+                  <div className="text-black">Satisfaction Rate</div>
                 </div>
               </div>
 
@@ -115,7 +115,7 @@ export default function AboutUs() {
                     <h4 className="font-semibold text-gray-700">
                       Office Address:
                     </h4>
-                    <p className="text-gray-600">
+                    <p className="text-black">
                       1st Floor Naimat Ullah Building
                       <br />
                       Near Murad Market, Oppo: Masjid Mohabat Khan
@@ -134,7 +134,7 @@ export default function AboutUs() {
                     <h4 className="font-semibold text-gray-700">
                       Contact Numbers
                     </h4>
-                    <p className="text-gray-600">
+                    <p className="text-black">
                       Phone: 091-2580547
                       <br />
                       Mobile: 0343-9831664
@@ -149,7 +149,7 @@ export default function AboutUs() {
                   </div>
                   <div>
                     <h4 className="font-semibold text-gray-700">Email</h4>
-                    <p className="text-gray-600">untravelandtours5@gmail.com</p>
+                    <p className="text-black">untravelandtours5@gmail.com</p>
                   </div>
                 </div>
               </div>

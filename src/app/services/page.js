@@ -8,18 +8,18 @@ import { usePathname } from "next/navigation";
 
 // License information
 const licenseInfo = {
-    title: "Travel License Information",
-    number: "PR - 6030",
-    issued: "January 2, 2025",
-    expiry: "January 1, 2027",
-    issuingAuthority: "Directorate of tourist services by govt kpk",
-    details:
-      "This license certifies that our company is fully authorized to organize and conduct Hajj and Umrah pilgrimages, as well as international group tours. We comply with all regulations set by the Ministry of Tourism and maintain the highest standards of service and safety for our clients.",
-  };
+  title: "Travel License Information",
+  number: "PR - 6030",
+  issued: "January 2, 2025",
+  expiry: "January 1, 2027",
+  issuingAuthority: "Directorate of tourist services by govt kpk",
+  details:
+    "This license certifies that our company is fully authorized to organize and conduct Hajj and Umrah pilgrimages, as well as international group tours. We comply with all regulations set by the Ministry of Tourism and maintain the highest standards of service and safety for our clients.",
+};
 export default function Services() {
   const [selectedService, setSelectedService] = useState(null);
   const [modalContent, setModalContent] = useState(null); // 'license' or 'reviews'
- const pathname = usePathname();
+  const pathname = usePathname();
   return (
     <div className="min-h-screen bg-gradient-to-b from-blue-50 to-gray-100">
       <Head>
@@ -37,7 +37,7 @@ export default function Services() {
           <h1 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">
             Our Premium Services
           </h1>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-xl text-black max-w-3xl mx-auto">
             Experience the journey of a lifetime with our carefully crafted
             travel packages and exceptional service standards.
           </p>
@@ -55,224 +55,231 @@ export default function Services() {
         </div>
 
         {/* Additional Information Section */}
-      {pathname === "/" ?<></>:  <div className="w-full mt-16 bg-white rounded-xl shadow-md p-6">
-          <h2 className="text-2xl font-bold text-gray-800 mb-6 text-center">
-            Why Choose Us?
-          </h2>
-          <div className="flex flex-col md:flex-row gap-10 md:gap-20 items-between">
-            <div className="flex items-start ">
-              <div className="bg-blue-100 p-3 rounded-full mr-4">
-                <svg
-                  className="w-6 h-6 text-blue-600"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
-                  ></path>
-                </svg>
+        {pathname === "/" ? (
+          <></>
+        ) : (
+          <div className="w-full mt-16 bg-white rounded-xl shadow-md p-6">
+            <h2 className="text-2xl font-bold text-gray-800 mb-6 text-center">
+              Why Choose Us?
+            </h2>
+            <div className="flex flex-col md:flex-row gap-10 md:gap-20 items-between">
+              <div className="flex items-start ">
+                <div className="bg-blue-100 p-3 rounded-full mr-4">
+                  <svg
+                    className="w-6 h-6 text-blue-600"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
+                    ></path>
+                  </svg>
+                </div>
+                <div>
+                  <h3 className="font-semibold text-lg mb-2">Fully Licensed</h3>
+                  <p className="text-black">
+                    We are fully licensed and authorized by tourism authorities.
+                  </p>
+                  <button
+                    onClick={() => setModalContent("license")}
+                    className="text-blue-600 hover:text-blue-800 mt-2 font-medium"
+                  >
+                    View License Details
+                  </button>
+                </div>
               </div>
-              <div>
-                <h3 className="font-semibold text-lg mb-2">Fully Licensed</h3>
-                <p className="text-gray-600">
-                  We are fully licensed and authorized by tourism authorities.
-                </p>
-                <button
-                  onClick={() => setModalContent("license")}
-                  className="text-blue-600 hover:text-blue-800 mt-2 font-medium"
-                >
-                  View License Details
-                </button>
-              </div>
-            </div>
-            <div className="flex items-start">
-              <div className="bg-blue-100 p-3 rounded-full mr-4">
-                <svg
-                  className="w-6 h-6 text-blue-600"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
-                  ></path>
-                </svg>
-              </div>
-              <div>
-                <h3 className="font-semibold text-lg mb-2">Customer Reviews</h3>
-                <p className="text-gray-600">
-                  See what our customers have to say about their experiences.
-                </p>
-                <button
-                  onClick={() => setModalContent("reviews")}
-                  className="text-blue-600 hover:text-blue-800 mt-2 font-medium"
-                >
-                  Read Reviews
-                </button>
+              <div className="flex items-start">
+                <div className="bg-blue-100 p-3 rounded-full mr-4">
+                  <svg
+                    className="w-6 h-6 text-blue-600"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
+                    ></path>
+                  </svg>
+                </div>
+                <div>
+                  <h3 className="font-semibold text-lg mb-2">
+                    Customer Reviews
+                  </h3>
+                  <p className="text-black">
+                    See what our customers have to say about their experiences.
+                  </p>
+                  <button
+                    onClick={() => setModalContent("reviews")}
+                    className="text-blue-600 hover:text-blue-800 mt-2 font-medium"
+                  >
+                    Read Reviews
+                  </button>
+                </div>
               </div>
             </div>
           </div>
-        </div>}
+        )}
       </main>
 
       {/* Modal for service details */}
-   {selectedService && (
-  <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50">
-    <div className="bg-white rounded-xl max-w-3xl w-full p-6">
-      {/* Header */}
-      <div className="flex justify-between items-center mb-4">
-        <h3 className="text-2xl font-bold text-gray-800">
-          {selectedService.title}
-        </h3>
-        <button
-          onClick={() => setSelectedService(null)}
-          className="text-gray-500 hover:text-gray-700"
-        >
-          ✕
-        </button>
-      </div>
+      {selectedService && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50">
+          <div className="bg-white rounded-xl max-w-3xl w-full p-6">
+            {/* Header */}
+            <div className="flex justify-between items-center mb-4">
+              <h3 className="text-2xl font-bold text-gray-800">
+                {selectedService.title}
+              </h3>
+              <button
+                onClick={() => setSelectedService(null)}
+                className="text-gray-500 hover:text-gray-700"
+              >
+                ✕
+              </button>
+            </div>
 
-      {/* Content Split */}
-      <div className="grid grid-cols-1 md:grid-cols-1 gap-6">
-        {/* Left Side - Text */}
-        <div>
-          <p className="mb-4 text-black font-bold">{selectedService.description}</p>
+            {/* Content Split */}
+            <div className="grid grid-cols-1 md:grid-cols-1 gap-6">
+              {/* Left Side - Text */}
+              <div>
+                <p className="mb-4 text-black font-bold">
+                  {selectedService.description}
+                </p>
 
-          <ul className="space-y-2 mb-4">
-            {selectedService.features.map((feature, index) => (
-              <li key={index} className="flex items-center">
-                ✅ <span className="ml-2 text-black font-bold">{feature}</span>
-              </li>
-            ))}
-          </ul>
+                <ul className="space-y-2 mb-4">
+                  {selectedService.features.map((feature, index) => (
+                    <li key={index} className="flex items-center">
+                      ✅{" "}
+                      <span className="ml-2 text-black font-bold">
+                        {feature}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
 
-          <div className="text-2xl font-bold text-blue-700 mb-6">
+                <div className="text-2xl font-bold text-blue-700 mb-6"></div>
+
+                <Link href="/contact">
+                  <button className="w-full bg-blue-600 text-white py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors duration-300">
+                    Book Package
+                  </button>
+                </Link>
+              </div>
+            </div>
           </div>
-
-          <Link href="/contact">
-            <button className="w-full bg-blue-600 text-white py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors duration-300">
-              Book Package
-            </button>
-          </Link>
         </div>
-
-
-      </div>
-    </div>
-  </div>
-)}
-
+      )}
 
       {/* Modal for license and reviews */}
- {modalContent && (
-  <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50">
-    <div className="bg-white rounded-xl max-w-4xl w-full max-h-[90vh] overflow-y-auto">
-      <div className="p-6">
-        {/* Header */}
-        <div className="flex justify-between items-center mb-6">
-          <h3 className="text-2xl font-bold text-gray-800">
-            {modalContent === "license"
-              ? licenseInfo.title
-              : "Customer Reviews"}
-          </h3>
-          <button
-            onClick={() => setModalContent(null)}
-            className="text-gray-500 hover:text-gray-700"
-          >
-            ✕
-          </button>
+      {modalContent && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50">
+          <div className="bg-white rounded-xl max-w-4xl w-full max-h-[90vh] overflow-y-auto">
+            <div className="p-6">
+              {/* Header */}
+              <div className="flex justify-between items-center mb-6">
+                <h3 className="text-2xl font-bold text-gray-800">
+                  {modalContent === "license"
+                    ? licenseInfo.title
+                    : "Customer Reviews"}
+                </h3>
+                <button
+                  onClick={() => setModalContent(null)}
+                  className="text-gray-500 hover:text-gray-700"
+                >
+                  ✕
+                </button>
+              </div>
+
+              {/* License Content with Image */}
+              {modalContent === "license" ? (
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 h-100">
+                  {/* Left side (content) */}
+                  <div className="space-y-4">
+                    <div className="bg-blue-50 p-4 rounded-lg">
+                      <div className="grid grid-cols-2 gap-4">
+                        <div>
+                          <p className="text-sm text-black">
+                            License Number
+                          </p>
+                          <p className="font-semibold">{licenseInfo.number}</p>
+                        </div>
+                        <div>
+                          <p className="text-sm text-black">
+                            Issuing Authority
+                          </p>
+                          <p className="font-semibold capitalize">
+                            {licenseInfo.issuingAuthority}
+                          </p>
+                        </div>
+                        <div>
+                          <p className="text-sm text-black">Issued On</p>
+                          <p className="font-semibold">{licenseInfo.issued}</p>
+                        </div>
+                        <div>
+                          <p className="text-sm text-black">Expires On</p>
+                          <p className="font-semibold">{licenseInfo.expiry}</p>
+                        </div>
+                      </div>
+                    </div>
+                    <p className="text-black">{licenseInfo.details}</p>
+                  </div>
+
+                  {/* Right side (image only for license) */}
+                  <div className="flex items-center justify-center">
+                    <img
+                      src="/lice.jpeg" // 👉 replace with actual license image path
+                      alt="License Document"
+                      className="w-full h-90  rounded-lg shadow-md"
+                    />
+                  </div>
+                </div>
+              ) : (
+                /* Reviews Content (no image) */
+                <div className="space-y-6">
+                  {dummyReviews.map((review) => (
+                    <div
+                      key={review.id}
+                      className="border-b border-gray-200 pb-6 last:border-0 last:pb-0"
+                    >
+                      <div className="flex justify-between items-start mb-2">
+                        <h4 className="font-semibold">{review.name}</h4>
+                        <div className="flex items-center">
+                          {[...Array(5)].map((_, i) => (
+                            <svg
+                              key={i}
+                              className={`w-5 h-5 ${
+                                i < review.rating
+                                  ? "text-yellow-400"
+                                  : "text-gray-300"
+                              }`}
+                              fill="currentColor"
+                              viewBox="0 0 20 20"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                            </svg>
+                          ))}
+                        </div>
+                      </div>
+                      <p className="text-black mb-2">{review.comment}</p>
+                      <p className="text-sm text-gray-500">{review.date}</p>
+                    </div>
+                  ))}
+                </div>
+              )}
+            </div>
+          </div>
         </div>
-
-        {/* License Content with Image */}
-        {modalContent === "license" ? (
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 h-100">
-            {/* Left side (content) */}
-            <div className="space-y-4">
-              <div className="bg-blue-50 p-4 rounded-lg">
-                <div className="grid grid-cols-2 gap-4">
-                  <div>
-                    <p className="text-sm text-gray-600">License Number</p>
-                    <p className="font-semibold">{licenseInfo.number}</p>
-                  </div>
-                  <div>
-                    <p className="text-sm text-gray-600">Issuing Authority</p>
-                    <p className="font-semibold capitalize">
-                      {licenseInfo.issuingAuthority}
-                    </p>
-                  </div>
-                  <div>
-                    <p className="text-sm text-gray-600">Issued On</p>
-                    <p className="font-semibold">{licenseInfo.issued}</p>
-                  </div>
-                  <div>
-                    <p className="text-sm text-gray-600">Expires On</p>
-                    <p className="font-semibold">{licenseInfo.expiry}</p>
-                  </div>
-                </div>
-              </div>
-              <p className="text-gray-600">{licenseInfo.details}</p>
-            </div>
-
-            {/* Right side (image only for license) */}
-            <div className="flex items-center justify-center">
-              <img
-                src="/lice.jpeg" // 👉 replace with actual license image path
-                alt="License Document"
-                className="w-full h-90  rounded-lg shadow-md"
-              />
-            </div>
-          </div>
-        ) : (
-          /* Reviews Content (no image) */
-          <div className="space-y-6">
-            {dummyReviews.map((review) => (
-              <div
-                key={review.id}
-                className="border-b border-gray-200 pb-6 last:border-0 last:pb-0"
-              >
-                <div className="flex justify-between items-start mb-2">
-                  <h4 className="font-semibold">{review.name}</h4>
-                  <div className="flex items-center">
-                    {[...Array(5)].map((_, i) => (
-                      <svg
-                        key={i}
-                        className={`w-5 h-5 ${
-                          i < review.rating
-                            ? "text-yellow-400"
-                            : "text-gray-300"
-                        }`}
-                        fill="currentColor"
-                        viewBox="0 0 20 20"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                      </svg>
-                    ))}
-                  </div>
-                </div>
-                <p className="text-gray-600 mb-2">{review.comment}</p>
-                <p className="text-sm text-gray-500">{review.date}</p>
-              </div>
-            ))}
-          </div>
-        )}
-      </div>
-    </div>
-  </div>
-)}
-
-
-
-      
+      )}
     </div>
   );
 }
@@ -309,8 +316,7 @@ function ServiceCard({ service, onSelect }) {
             </li>
           ))}
         </ul>
-        <div className="text-2xl font-bold text-blue-700 mb-6">
-        </div>
+        <div className="text-2xl font-bold text-blue-700 mb-6"></div>
       </div>
       <div className="flex gap-2 p-4 bg-gray-50 border-t border-gray-100">
         <button
@@ -319,11 +325,13 @@ function ServiceCard({ service, onSelect }) {
         >
           Learn More
         </button>
-        <Link href="/contact" passHref className="w-full border border-black rounded-lg py-3 font-semibold transition-colors hover:pointer">
-      <button className="w-full   transition-colors">
-        Book Now
-      </button>
-    </Link>
+        <Link
+          href="/contact"
+          passHref
+          className="w-full border border-black rounded-lg py-3 text-black font-bold transition-colors hover:pointer"
+        >
+          <button className="w-full  text-black font-bold ">Book Now</button>
+        </Link>
       </div>
     </div>
   );
