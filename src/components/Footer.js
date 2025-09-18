@@ -111,6 +111,9 @@ export default function Footer() {
             <li>
               <Link href="/services">Services</Link>
             </li>
+            <li>
+              <Link href="/faq">FAQs</Link>
+            </li>
       
           </ul>
         </div>
