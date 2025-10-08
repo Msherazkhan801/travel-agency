@@ -1,54 +1,93 @@
 "use client";
 import { useForm, ValidationError } from "@formspree/react";
 import Link from "next/link";
+import React from "react";
 
 export default function Contact() {
-  const [state, handleSubmit] = useForm("xvgbrkae"); // <-- replace with your Formspree form ID
+  const [state, handleSubmit] = useForm("xvgbrkae"); // replace with your Formspree form ID
 
   if (state.succeeded) {
     return (
-      <>
-        <h3 className="text-yellow-600 my-24 py-3 text-center font-semibold">
-          ✅ Thanks for contacting us! We’ll get back to you shortly.<br></br>
-          <Link href="/">
-            <button className="border border-black rounded p-5 mt-5">
-              Back to Home
-            </button>
-          </Link>
+      <section
+        className="flex flex-col items-center justify-center text-center py-24 px-6"
+        aria-label="Contact Form Submission Success"
+      >
+        <h3 className="text-yellow-600 font-semibold text-2xl mb-4">
+          ✅ Thank you for contacting Usman Naimat Travel & Tours!
         </h3>
-      </>
+        <p className="text-gray-700 mb-6">
+          We’ve received your message and will get back to you shortly.
+        </p>
+        <Link href="/">
+          <button className="border border-black rounded-lg px-6 py-3 font-medium hover:bg-black hover:text-white transition">
+            Back to Home
+          </button>
+        </Link>
+      </section>
     );
   }
+
   return (
-    <section className="py-16 bg-gray-100">
+    <section
+      className="py-16 bg-gray-100"
+      aria-labelledby="contact-heading"
+      itemScope
+      itemType="https://schema.org/ContactPage"
+    >
       <div className="container mx-auto px-4 mt-8">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold text-gray-800 mb-4">Contact Us</h2>
-          <p className="text-black max-w-2xl mx-auto">
-            We’d love to hear from you! Whether you have a question about our
-            Hajj & Umrah packages, need assistance, or just want to talk — we’re
-            here to help.
+        {/* SEO Heading */}
+        <header className="text-center mb-12">
+          <h1
+            id="contact-heading"
+            className="text-3xl font-bold text-gray-800 mb-4"
+            itemProp="headline"
+          >
+            Contact Us
+          </h1>
+          <p className="text-black max-w-2xl mx-auto" itemProp="description">
+            Get in touch with Usman Naimat Travel & Tours — Pakistan’s trusted
+            Hajj and Umrah travel agency. Whether you have questions about our
+            pilgrimage packages, visa services, or travel assistance, our
+            support team is ready to help.
           </p>
-        </div>
+        </header>
 
         {/* Grid Layout: Form + Map */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
           {/* Contact Form */}
-          <div className="bg-white rounded-lg shadow-md p-6">
-            <h3 className="text-xl font-semibold text-gray-800 mb-4">
+          <article
+            className="bg-white rounded-lg shadow-md p-6"
+            itemScope
+            itemType="https://schema.org/ContactForm"
+          >
+            <h2
+              className="text-xl font-semibold text-gray-800 mb-4"
+              itemProp="name"
+            >
               Get in Touch
-            </h3>
+            </h2>
 
-            <form onSubmit={handleSubmit} className="space-y-4">
+            <form
+              onSubmit={handleSubmit}
+              className="space-y-4"
+              itemProp="potentialAction"
+              itemScope
+              itemType="https://schema.org/CommunicateAction"
+            >
               {/* Name */}
               <div>
-                <label className="block text-black text-sm mb-2">Name</label>
+                <label
+                  htmlFor="name"
+                  className="block text-black text-sm mb-2 font-medium"
+                >
+                  Name
+                </label>
                 <input
                   id="name"
                   type="text"
                   name="name"
-                  placeholder="Your Name"
-                  className="w-full border text-bold border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-emerald-500 outline-none"
+                  placeholder="Your Full Name"
+                  className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-emerald-500 outline-none"
                   required
                 />
                 <ValidationError
@@ -60,7 +99,10 @@ export default function Contact() {
 
               {/* Email */}
               <div>
-                <label className="block text-black text-sm mb-2">
+                <label
+                  htmlFor="email"
+                  className="block text-black text-sm mb-2 font-medium"
+                >
                   Email
                 </label>
                 <input
@@ -68,7 +110,7 @@ export default function Contact() {
                   type="email"
                   name="email"
                   placeholder="you@example.com"
-                  className="w-full border text-bold border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-emerald-500 outline-none"
+                  className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-emerald-500 outline-none"
                   required
                 />
                 <ValidationError
@@ -77,15 +119,20 @@ export default function Contact() {
                   errors={state.errors}
                 />
               </div>
-              {/* Email */}
+
+              {/* Contact Number */}
               <div>
-                <label className="block text-black text-sm mb-2">
-                  Contact
+                <label
+                  htmlFor="phone"
+                  className="block text-black text-sm mb-2 font-medium"
+                >
+                  Contact Number
                 </label>
                 <input
                   id="phone"
-                  type="number"
+                  type="tel"
                   name="phone"
+                  pattern="[0-9]{11}"
                   placeholder="03221234567"
                   className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-emerald-500 outline-none"
                   required
@@ -99,8 +146,11 @@ export default function Contact() {
 
               {/* Visa Status Dropdown */}
               <div>
-                <label className="block text-black text-sm mb-2">
-                  Visa Status
+                <label
+                  htmlFor="visa"
+                  className="block text-black text-sm mb-2 font-medium"
+                >
+                  Visa Type
                 </label>
                 <select
                   id="visa"
@@ -109,22 +159,25 @@ export default function Contact() {
                   required
                 >
                   <option value="">-- Select Option --</option>
-                  <option value="umrah">Umrah</option>
-                  <option value="hajj">Hajj</option>
-                  <option value="other">Other</option>
+                  <option value="umrah">Umrah Visa</option>
+                  <option value="hajj">Hajj Visa</option>
+                  <option value="other">Other Inquiry</option>
                 </select>
               </div>
 
               {/* Message */}
               <div>
-                <label className="block text-black text-sm mb-2">
+                <label
+                  htmlFor="message"
+                  className="block text-black text-sm mb-2 font-medium"
+                >
                   Message
                 </label>
                 <textarea
                   id="message"
                   name="message"
                   rows="5"
-                  placeholder="Write your message..."
+                  placeholder="Write your message here..."
                   className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-emerald-500 outline-none"
                   required
                 ></textarea>
@@ -139,17 +192,22 @@ export default function Contact() {
               <button
                 type="submit"
                 disabled={state.submitting}
-                className="w-full bg-yellow-500 text-white font-semibold py-2 rounded-lg hover:bg-yellow-400 transition disabled:opacity-50"
+                className="w-full bg-yellow-500 text-white font-semibold py-3 rounded-lg hover:bg-yellow-400 transition disabled:opacity-50"
+                aria-label="Submit contact form"
               >
                 {state.submitting ? "Sending..." : "Send Message"}
               </button>
             </form>
-          </div>
+          </article>
 
           {/* Map Section */}
-          <div className="rounded-lg overflow-hidden shadow-md">
+          <aside
+            className="rounded-lg overflow-hidden shadow-md"
+            aria-label="Office Location Map"
+          >
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d194104.13653142744!2d71.56547024999999!3d33.97729304999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60138eb8fe647b87%3A0x6c56f39ef75126b5!2sUN%20TRAVEL%20%26%20TOURS%20HAJJ%20%26%20UMRAH%20SERVIES%20PVT%20LTD!5e1!3m2!1sen!2s!4v1756236184051!5m2!1sen!2s"
+              title="Usman Naimat Travel & Tours Office Location"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d194104.13653142744!2d71.56547024999999!3d33.97729304999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60138eb8fe647b87%3A0x6c56f39ef75126b5!2sUN%20TRAVEL%20%26%20TOURS%20HAJJ%20%26%20UMRAH%20SERVICES%20PVT%20LTD!5e1!3m2!1sen!2s!4v1756236184051!5m2!1sen!2s"
               width="600"
               height="600"
               style={{ border: 0 }}
@@ -157,9 +215,32 @@ export default function Contact() {
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
             />
-          </div>
+          </aside>
         </div>
       </div>
+
+      {/* Structured Data for SEO */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "TravelAgency",
+            name: "Usman Naimat Travel & Tours",
+            url: "https://your-domain.com/contact",
+            contactPoint: {
+              "@type": "ContactPoint",
+              telephone: "+92-xxx-xxxxxxx",
+              contactType: "Customer Service",
+              areaServed: "PK",
+              availableLanguage: ["English", "Urdu"],
+            },
+            description:
+              "Contact Usman Naimat Travel & Tours — your trusted partner for Hajj and Umrah travel services in Pakistan.",
+            image: "/medina-hero.jpg",
+          }),
+        }}
+      />
     </section>
   );
 }

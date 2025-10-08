@@ -113,6 +113,7 @@ export default function Footer() {
             </li>
             <li>
               <Link href="/faq">FAQs</Link>
+              
             </li>
       
           </ul>

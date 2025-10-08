@@ -1,4 +1,3 @@
-// pages/services.js
 "use client";
 import { dummyReviews, servicesData } from "@/lib/Data";
 import Head from "next/head";
@@ -16,10 +15,12 @@ const licenseInfo = {
   details:
     "This license certifies that our company is fully authorized to organize and conduct Hajj and Umrah pilgrimages, as well as international group tours. We comply with all regulations set by the Ministry of Tourism and maintain the highest standards of service and safety for our clients.",
 };
+
 export default function Services() {
   const [selectedService, setSelectedService] = useState(null);
   const [modalContent, setModalContent] = useState(null); // 'license' or 'reviews'
   const pathname = usePathname();
+
   return (
     <div className="min-h-screen bg-gradient-to-b from-blue-50 to-gray-100">
       <Head>
@@ -58,75 +59,109 @@ export default function Services() {
         {pathname === "/" ? (
           <></>
         ) : (
-          <div className="w-full mt-16 bg-white rounded-xl shadow-md p-6">
-            <h2 className="text-2xl font-bold text-gray-800 mb-6 text-center">
-              Why Choose Us?
-            </h2>
-            <div className="flex flex-col md:flex-row gap-10 md:gap-20 items-between">
-              <div className="flex items-start ">
-                <div className="bg-blue-100 p-3 rounded-full mr-4">
-                  <svg
-                    className="w-6 h-6 text-blue-600"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                      d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
-                    ></path>
-                  </svg>
-                </div>
-                <div>
-                  <h3 className="font-semibold text-lg mb-2">Fully Licensed</h3>
-                  <p className="text-black">
-                    We are fully licensed and authorized by tourism authorities.
-                  </p>
-                  <button
-                    onClick={() => setModalContent("license")}
-                    className="text-blue-600 hover:text-blue-800 mt-2 font-medium"
-                  >
-                    View License Details
-                  </button>
-                </div>
+          <>
+            {/* ✅ Mobile-only compact version */}
+            <div className="block md:hidden w-full mt-12 bg-white rounded-xl shadow-md p-6 text-center">
+              <h2 className="text-2xl font-bold text-gray-800 mb-3">
+                Why Choose Us?
+              </h2>
+              <p className="text-black text-base leading-relaxed">
+                Licensed and trusted pilgrimage experts offering Hajj & Umrah
+                services with complete travel support. Tap below to see license
+                details and customer reviews.
+              </p>
+              <div className="flex justify-center gap-4 mt-4">
+                <button
+                  onClick={() => setModalContent("license")}
+                  className="text-blue-600 font-medium hover:text-blue-800"
+                >
+                  View License
+                </button>
+                <button
+                  onClick={() => setModalContent("reviews")}
+                  className="text-blue-600 font-medium hover:text-blue-800"
+                >
+                  Read Reviews
+                </button>
               </div>
-              <div className="flex items-start">
-                <div className="bg-blue-100 p-3 rounded-full mr-4">
-                  <svg
-                    className="w-6 h-6 text-blue-600"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                      d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
-                    ></path>
-                  </svg>
+            </div>
+
+            {/* ✅ Desktop / tablet detailed version */}
+            <div className="hidden md:block w-full mt-16 bg-white rounded-xl shadow-md p-6">
+              <h2 className="text-2xl font-bold text-gray-800 mb-6 text-center">
+                Why Choose Us?
+              </h2>
+              <div className="flex flex-col md:flex-row gap-10 md:gap-20 items-between">
+                {/* Licensed */}
+                <div className="flex items-start">
+                  <div className="bg-blue-100 p-3 rounded-full mr-4">
+                    <svg
+                      className="w-6 h-6 text-blue-600"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth="2"
+                        d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
+                      ></path>
+                    </svg>
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-lg mb-2">
+                      Fully Licensed
+                    </h3>
+                    <p className="text-black">
+                      We are fully licensed and authorized by tourism authorities.
+                    </p>
+                    <button
+                      onClick={() => setModalContent("license")}
+                      className="text-blue-600 hover:text-blue-800 mt-2 font-medium"
+                    >
+                      View License Details
+                    </button>
+                  </div>
                 </div>
-                <div>
-                  <h3 className="font-semibold text-lg mb-2">
-                    Customer Reviews
-                  </h3>
-                  <p className="text-black">
-                    See what our customers have to say about their experiences.
-                  </p>
-                  <button
-                    onClick={() => setModalContent("reviews")}
-                    className="text-blue-600 hover:text-blue-800 mt-2 font-medium"
-                  >
-                    Read Reviews
-                  </button>
+
+                {/* Reviews */}
+                <div className="flex items-start">
+                  <div className="bg-blue-100 p-3 rounded-full mr-4">
+                    <svg
+                      className="w-6 h-6 text-blue-600"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth="2"
+                        d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
+                      ></path>
+                    </svg>
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-lg mb-2">
+                      Customer Reviews
+                    </h3>
+                    <p className="text-black">
+                      See what our customers have to say about their experiences.
+                    </p>
+                    <button
+                      onClick={() => setModalContent("reviews")}
+                      className="text-blue-600 hover:text-blue-800 mt-2 font-medium"
+                    >
+                      Read Reviews
+                    </button>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
+          </>
         )}
       </main>
 
@@ -134,7 +169,6 @@ export default function Services() {
       {selectedService && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50">
           <div className="bg-white rounded-xl max-w-3xl w-full p-6">
-            {/* Header */}
             <div className="flex justify-between items-center mb-4">
               <h3 className="text-2xl font-bold text-gray-800">
                 {selectedService.title}
@@ -147,14 +181,11 @@ export default function Services() {
               </button>
             </div>
 
-            {/* Content Split */}
-            <div className="grid grid-cols-1 md:grid-cols-1 gap-6">
-              {/* Left Side - Text */}
+            <div className="grid grid-cols-1 gap-6">
               <div>
                 <p className="mb-4 text-black font-bold">
                   {selectedService.description}
                 </p>
-
                 <ul className="space-y-2 mb-4">
                   {selectedService.features.map((feature, index) => (
                     <li key={index} className="flex items-center">
@@ -165,8 +196,6 @@ export default function Services() {
                     </li>
                   ))}
                 </ul>
-
-                <div className="text-2xl font-bold text-blue-700 mb-6"></div>
 
                 <Link href="/contact">
                   <button className="w-full bg-blue-600 text-white py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors duration-300">
@@ -184,7 +213,6 @@ export default function Services() {
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50">
           <div className="bg-white rounded-xl max-w-4xl w-full max-h-[90vh] overflow-y-auto">
             <div className="p-6">
-              {/* Header */}
               <div className="flex justify-between items-center mb-6">
                 <h3 className="text-2xl font-bold text-gray-800">
                   {modalContent === "license"
@@ -199,17 +227,13 @@ export default function Services() {
                 </button>
               </div>
 
-              {/* License Content with Image */}
               {modalContent === "license" ? (
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 h-100">
-                  {/* Left side (content) */}
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div className="space-y-4">
                     <div className="bg-blue-50 p-4 rounded-lg">
                       <div className="grid grid-cols-2 gap-4">
                         <div>
-                          <p className="text-sm text-black">
-                            License Number
-                          </p>
+                          <p className="text-sm text-black">License Number</p>
                           <p className="font-semibold">{licenseInfo.number}</p>
                         </div>
                         <div>
@@ -233,17 +257,15 @@ export default function Services() {
                     <p className="text-black">{licenseInfo.details}</p>
                   </div>
 
-                  {/* Right side (image only for license) */}
                   <div className="flex items-center justify-center">
                     <img
-                      src="/lice.jpeg" // 👉 replace with actual license image path
+                      src="/lice.jpeg"
                       alt="License Document"
-                      className="w-full h-90  rounded-lg shadow-md"
+                      className="w-full h-auto rounded-lg shadow-md"
                     />
                   </div>
                 </div>
               ) : (
-                /* Reviews Content (no image) */
                 <div className="space-y-6">
                   {dummyReviews.map((review) => (
                     <div
@@ -316,8 +338,8 @@ function ServiceCard({ service, onSelect }) {
             </li>
           ))}
         </ul>
-        <div className="text-2xl font-bold text-blue-700 mb-6"></div>
       </div>
+
       <div className="flex gap-2 p-4 bg-gray-50 border-t border-gray-100">
         <button
           onClick={() => onSelect(service)}
@@ -330,7 +352,7 @@ function ServiceCard({ service, onSelect }) {
           passHref
           className="w-full border border-black rounded-lg py-3 text-black font-bold transition-colors hover:pointer"
         >
-          <button className="w-full  text-black font-bold ">Book Now</button>
+          <button className="w-full text-black font-bold">Book Now</button>
         </Link>
       </div>
     </div>
