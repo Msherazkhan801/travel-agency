@@ -4,7 +4,7 @@ export default function sitemap() {
       url: 'https://www.usmannaimattravelagency.com',
       lastModified: new Date(),
       changeFrequency: 'monthly',
-      priority: 1.0,
+      priority: 1,
     },
     {
       url: 'https://www.usmannaimattravelagency.com/about',
@@ -28,7 +28,7 @@ export default function sitemap() {
       url: 'https://www.usmannaimattravelagency.com/faq',
       lastModified: new Date(),
       changeFrequency: 'monthly',
-      priority: 0.7,
+      priority: 0.6,
     },
-  ]
+  ];
 }
