@@ -22,6 +22,17 @@ export const metadata = {
   icons: {
     icon: "/logo.ico",
   },
+   robots: {
+    index: true,
+    follow: true,
+    googlebot: {
+      index: true,
+      follow: true,
+    },
+  },
+  // Alternative simpler version:
+  // robots: 'index, follow',
+
 };
 
 export default function RootLayout({ children }) {
