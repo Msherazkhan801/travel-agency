@@ -7,7 +7,7 @@ import Link from "next/link";
 const slides = [
   {
     id: 1,
-    image: '/kaaba-hero.jpg',
+    image: '/kaaba-hero.webp',
     title: "Sacred Journey to Mecca",
     subtitle: "Experience the spiritual pilgrimage of Hajj",
     description:
