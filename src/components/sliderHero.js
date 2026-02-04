@@ -51,7 +51,7 @@ export default function HeroSlider() {
 
   return (
     <section aria-label="Hero slider" className="relative h-screen overflow-hidden">
-      {/* Slides */}
+      {/* Slidess */}
       {slides.map((slide, index) => (
         <article
           key={slide.id}
