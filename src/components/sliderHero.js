@@ -7,7 +7,7 @@ import Link from "next/link";
 const slides = [
   {
     id: 1,
-    image: '/kaaba-hero.jpg',
+    image: '/kaaba-hero.webp',
     title: "Sacred Journey to Mecca",
     subtitle: "Experience the spiritual pilgrimage of Hajj",
     description:
@@ -51,7 +51,7 @@ export default function HeroSlider() {
 
   return (
     <section aria-label="Hero slider" className="relative h-screen overflow-hidden">
-      {/* Slides */}
+      {/* Slidess */}
       {slides.map((slide, index) => (
         <article
           key={slide.id}
