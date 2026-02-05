@@ -343,7 +343,7 @@ function ServiceCard({ service, onSelect }) {
       <div className="flex gap-2 p-4 bg-gray-50 border-t border-gray-100">
         <button
           onClick={() => onSelect(service)}
-          className="w-full bg-yellow-500 text-white py-3 rounded-lg font-semibold hover:bg-yellow-400 transition-colors duration-300"
+          className="w-full bg-yellow-500 text-black py-3 rounded-lg font-semibold hover:bg-yellow-600 transition-colors duration-300"
         >
           Learn More
         </button>
