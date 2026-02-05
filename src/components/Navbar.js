@@ -74,18 +74,24 @@ export default function Navbar() {
             })}
           </ul>
 
-          {/* Mobile Hamburger */}
+          {/* Mobile Hamburger - FIXED ACCESSIBILITY */}
           <button
             className="md:hidden text-white"
             onClick={() => setMenuOpen(!menuOpen)}
+            aria-label={menuOpen ? "Close navigation menu" : "Open navigation menu"}
+            aria-expanded={menuOpen}
+            aria-controls="mobile-menu-dropdown"
           >
-            {menuOpen ? <X size={28} color="black" /> : <Menu size={28} color="black"/>}
+            {menuOpen ? <X size={28} color="black" /> : <Menu size={28} color="black" />}
           </button>
         </div>
 
-        {/* Mobile Menu Dropdown */}
+        {/* Mobile Menu Dropdown - FIXED ACCESSIBILITY */}
         {menuOpen && (
-          <div className="md:hidden bg-white/90 backdrop-blur-md shadow-lg">
+          <div 
+            id="mobile-menu-dropdown"
+            className="md:hidden bg-white/90 backdrop-blur-md shadow-lg"
+          >
             <ul className="flex flex-col items-center space-y-4 py-6">
               {links.map((link) => {
                 const isActive = pathname === link.path;
