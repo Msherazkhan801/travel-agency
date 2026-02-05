@@ -87,7 +87,7 @@ export default function Contact() {
                   type="text"
                   name="name"
                   placeholder="Your Full Name"
-                  className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-emerald-500 outline-none"
+                  className="w-full border text-black border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-emerald-500 outline-none"
                   required
                 />
                 <ValidationError
@@ -110,7 +110,7 @@ export default function Contact() {
                   type="email"
                   name="email"
                   placeholder="you@example.com"
-                  className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-emerald-500 outline-none"
+                  className="w-full border text-black border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-emerald-500 outline-none"
                   required
                 />
                 <ValidationError
@@ -134,7 +134,7 @@ export default function Contact() {
                   name="phone"
                   pattern="[0-9]{11}"
                   placeholder="03221234567"
-                  className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-emerald-500 outline-none"
+                  className="w-full border text-black border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-emerald-500 outline-none"
                   required
                 />
                 <ValidationError
@@ -155,7 +155,7 @@ export default function Contact() {
                 <select
                   id="visa"
                   name="visa"
-                  className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-emerald-500 outline-none"
+                  className="w-full border text-black border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-emerald-500 outline-none"
                   required
                 >
                   <option value="">-- Select Option --</option>
@@ -178,7 +178,7 @@ export default function Contact() {
                   name="message"
                   rows="5"
                   placeholder="Write your message here..."
-                  className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-emerald-500 outline-none"
+                  className="w-full border text-black border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-emerald-500 outline-none"
                   required
                 ></textarea>
                 <ValidationError
