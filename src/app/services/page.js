@@ -340,21 +340,23 @@ function ServiceCard({ service, onSelect }) {
         </ul>
       </div>
 
-      <div className="flex gap-2 p-4 bg-gray-50 border-t border-gray-100">
-        <button
-          onClick={() => onSelect(service)}
-          className="w-full bg-yellow-500 text-black py-3 rounded-lg font-semibold hover:bg-yellow-600 transition-colors duration-300"
-        >
-          Learn More
-        </button>
-        <Link
-          href="/contact"
-          passHref
-          className="w-full border border-black rounded-lg py-3 text-black font-bold transition-colors hover:pointer"
-        >
-          <button className="w-full text-black font-bold">Book Now</button>
-        </Link>
-      </div>
+  <div className="flex gap-3 p-4 bg-gray-50 border-t border-gray-100">
+  {/* Learn More Button */}
+  <button
+    onClick={() => onSelect(service)}
+    className="w-full bg-yellow-500 text-black py-4 rounded-lg font-semibold hover:bg-yellow-600 transition-colors duration-300 min-h-[52px] flex items-center justify-center"
+  >
+    Learn More
+  </button>
+  
+  {/* Book Now Link - FIXED */}
+  <Link
+    href="/contact"
+    className="w-full border border-black rounded-lg font-bold transition-colors hover:bg-gray-100 min-h-[52px] flex items-center justify-center"
+  >
+    <span className="text-black">Book Now</span>
+  </Link>
+</div>
     </div>
   );
 }
