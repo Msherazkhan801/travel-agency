@@ -10,6 +10,8 @@ const links = [
   { name: "About", path: "/about" },
   { name: "Services", path: "/services" },
   { name: "Contact", path: "/contact" },
+  { name: "Pilgrim Guidance", path: "/guideness" },
+  { name: "FAQs", path: "/faq" },
 ];
 
 export default function Navbar() {
