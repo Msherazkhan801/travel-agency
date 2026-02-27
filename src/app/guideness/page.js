@@ -68,6 +68,7 @@ export default function VideoGuides() {
                   frameBorder="0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                   allowFullScreen
+                  eferrerPolicy="strict-origin-when-cross-origin"
                 ></iframe>
               </div>
               <div className="p-5">
