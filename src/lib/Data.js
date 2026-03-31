@@ -10,8 +10,9 @@ export const servicesData = [
   {
     id: 2,
     title: "Umrah Services",
-    description: "Year-round Umrah packages designed for comfort and spirituality, with flexible dates and premium amenities.",
-     features: ["SHARING:(255000 PKR)", "QUAD:(260000 PKR)", "TRIPLE:(272000)","DOUBLE:(295000)"],
+    description: `Coming Soon – Umrah Packages 1448 AH
+We are currently preparing our exclusive Umrah packages for the Hijri year 1448. Insha’Allah, new offers, tailored services, and competitive rates will be available shortly. Please check back soon or contact us to be notified when the packages are live. Your spiritual journey matters to us, and we look forward to serving you.`,
+     features: [],
    
     icon: '📿'
   },
