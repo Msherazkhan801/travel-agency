@@ -9,6 +9,7 @@ const links = [
   { name: "Home", path: "/" },
   { name: "About", path: "/about" },
   { name: "Services", path: "/services" },
+  { name: "Pakages", path: "/pakages" },
   { name: "Contact", path: "/contact" },
   { name: "Pilgrim Guidance", path: "/guideness" },
   { name: "FAQs", path: "/faq" },

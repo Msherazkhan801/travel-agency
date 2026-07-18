@@ -111,7 +111,7 @@ export default function Services() {
                     </svg>
                   </div>
                   <div>
-                    <h3 className="font-semibold text-lg mb-2">
+                    <h3 className="font-semibold text-lg mb-2 text-black">
                       Fully Licensed
                     </h3>
                     <p className="text-black">
@@ -145,7 +145,7 @@ export default function Services() {
                     </svg>
                   </div>
                   <div>
-                    <h3 className="font-semibold text-lg mb-2">
+                    <h3 className="font-semibold text-lg mb-2 text-black">
                       Customer Reviews
                     </h3>
                     <p className="text-black">

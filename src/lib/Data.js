@@ -10,9 +10,8 @@ export const servicesData = [
   {
     id: 2,
     title: "Umrah Services",
-    description: `Coming Soon – Umrah Packages 1448 AH
-We are currently preparing our exclusive Umrah packages for the Hijri year 1448. Insha’Allah, new offers, tailored services, and competitive rates will be available shortly. Please check back soon or contact us to be notified when the packages are live. Your spiritual journey matters to us, and we look forward to serving you.`,
-     features: [],
+    description: `Comprehensive Umrah packages including visa processing, flights, accommodation, and guided tours to ensure a smooth and fulfilling pilgrimage experience.`,
+     features: ["Visa Processing", "Flights", "Accommodation", "Guided Tours"],
    
     icon: '📿'
   },
