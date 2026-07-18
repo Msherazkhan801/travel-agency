@@ -4,7 +4,8 @@ import React, { useState } from 'react'
 const Pakages = () => {
   // 1. Define your array of images with names and URLs
   const packageImages = [
-    { id: 1, name: "Premium Umrah Package", url: "/pkg.jpeg" },
+    { id: 1, name: "22 days Umrah Package", url: "/pkg.jpeg" },
+    { id: 1, name: "21  days Umrah Package", url: "/pkg1.jpeg" },
 
   ];
 
